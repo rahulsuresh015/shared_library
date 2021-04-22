@@ -29,7 +29,7 @@ pipeline {
 							 sh 'pwd'	
 							 sh 'ls -lrt'	
 							 script { 
-								 dockerImage = docker.build registry + ":" + dockerTag 
+								 dockerImage = docker.build $registry + ":" + $dockerTag 
 							 }
 						} 
 					}
@@ -37,7 +37,7 @@ pipeline {
 					stage('PUSH HUB') { 
 						 steps { 
 							 script { 
-								 docker.withRegistry( '', registryCredential ) { 
+								 docker.withRegistry( '', $registryCredential ) { 
 									 dockerImage.push() 
 									}
 							}		
@@ -47,7 +47,7 @@ pipeline {
 					stage('DEPLOY IMAGE') {
 						steps {
 						 sshagent (credentials: ['qpfb_ssh']) {
-								sh "ssh -o StrictHostKeyChecking=no -l qprofiles1 34.122.133.104 deploy $registry $dockerTag $containerName"
+								sh "ssh -o StrictHostKeyChecking=no -l qprofiles1  deploy $registry $dockerTag $containerName"
 							  }
 						}
 					}
