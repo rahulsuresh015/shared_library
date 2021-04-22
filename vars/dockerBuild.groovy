@@ -47,7 +47,7 @@ pipeline {
 					stage('DEPLOY IMAGE') {
 						steps {
 						 sh '''cd
-						 ssh -i /aws.pem ubuntu@172.31.38.250 ls
+						 ssh -i /aws.pem ubuntu@172.31.38.250 docker run -it -d alpine
 						 '''
 						}
 					}
