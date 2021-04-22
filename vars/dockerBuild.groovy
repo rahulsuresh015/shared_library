@@ -46,8 +46,8 @@ pipeline {
 					
 					stage('DEPLOY IMAGE') {
 						steps {
-						 sshagent (credentials: ['aws_ssh']) {
-								sh "ssh -o StrictHostKeyChecking=no -l ec2-user 172.31.4.0 deploy $registry $dockerTag $containerName"
+						 sshagent (credentials: ['ubuntu_ssh']) {
+								sh "ssh -o StrictHostKeyChecking=no -l ec2-user 52.14.30.234 uname -a"
 							  }
 						}
 					}
