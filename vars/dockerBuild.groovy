@@ -46,7 +46,7 @@ pipeline {
 					
 					stage('DEPLOY IMAGE') {
 						steps {
-						 sh '''ssh -i aws.pem ubuntu@172.31.38.250 ls'''
+						 sh '''ls'''
 						}
 					}
 			}
