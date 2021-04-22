@@ -29,7 +29,7 @@ pipeline {
 							 sh 'pwd'	
 							 sh 'ls -lrt'	
 							 script { 
-								 dockerImage = docker.build $registry + ":" + $dockerTag 
+								 dockerImage = docker.build($registry + ":" + $dockerTag) 
 							 }
 						} 
 					}
