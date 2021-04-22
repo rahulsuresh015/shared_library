@@ -46,8 +46,8 @@ pipeline {
 					
 					stage('DEPLOY IMAGE') {
 						steps {
-						 sshagent (credentials: ['qpfb_ssh']) {
-								sh "ssh -o StrictHostKeyChecking=no -l qprofiles1 34.122.133.104 deploy $registry $dockerTag $containerName"
+						 sshagent (credentials: ['aws_ssh']) {
+								sh "ssh -o StrictHostKeyChecking=no -l ec2-user 172.31.4.0 deploy $registry $dockerTag $containerName"
 							  }
 						}
 					}
