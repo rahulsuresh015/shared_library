@@ -47,7 +47,7 @@ pipeline {
 					stage('DEPLOY IMAGE') {
 						steps {
 						 sshagent (credentials: ['ubuntu_ssh']) {
-								sh "ssh -o StrictHostKeyChecking=no -l ec2-user 172.31.38.250 uname -a"
+								sh "ssh -o StrictHostKeyChecking=no -l ubuntu 172.31.38.250 uname -a"
 							  }
 						}
 					}
