@@ -46,9 +46,9 @@ pipeline {
 					
 					stage('DEPLOY IMAGE') {
 						steps {
-						 sh '''cd
-						 ssh -i /aws.pem ubuntu@172.31.38.250 docker run -it -d alpine
-						 '''
+						 sshagent (credentials: ['ubuntu_ssh']) {
+							sh "ssh -o StrictHostKeyChecking=no -l ubuntu 172.31.38.250 docker run -it -d alpine"           
+                					}
 						}
 					}
 			}
