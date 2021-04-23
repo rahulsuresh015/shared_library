@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Stage1:GIT') {
             steps {
-                git branch: '$gitBranch', credentialsId: '$gitCredID', url: '$gitRepo'
+                git branch: '$gitBranch', credentialsId: ['$gitCredID'], url: '$gitRepo'
                 
             }
         } 
