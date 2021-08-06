@@ -20,7 +20,7 @@ environment {
 	stages {
 		stage("POLL SCM"){
 			steps {
-				 checkout([$class: 'GitSCM', branches: [[name: '$gitBranch']], extensions: [], userRemoteConfigs: [[credentialsId: '$gitCredId', url: '$gitRepo']]])
+				 checkout([$class: 'GitSCM', branches: [[name: "$gitBranch"]], extensions: [], userRemoteConfigs: [[credentialsId: "$gitCredId", url: "$gitRepo"]]])
 			}
 		}	
 					
