@@ -11,7 +11,7 @@ environment {
 		gitCredId = "${gitcred}"
 	}
 		
-	agent docker
+	agent { label 'docker' }
 	
 	triggers {
 		pollSCM '* * * * *'
