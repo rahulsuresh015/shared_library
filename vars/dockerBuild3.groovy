@@ -35,7 +35,7 @@ environment {
 		stage('PUSH HUB') { 
 			 steps { 
 				 script { 
-					 docker.withRegistry( '', registryCredential ) { 
+					 docker.withRegistry( '', "$registryCredential" ) { 
 						 dockerImage.push() 
 					}
 				}		
@@ -46,7 +46,7 @@ environment {
 			steps {
 				script { 
 					 docker.withRegistry( '', registryCredential ) { 
-						 dockerImage.run('-itd --name "$containerName-$dockerTag"') 
+						 dockerImage.run('-it --name "$containerName-$dockerTag"') 
 					}
 				} 
 			}
