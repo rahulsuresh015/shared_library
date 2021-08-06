@@ -20,7 +20,7 @@ environment {
 	stages {
 		stage("POLL SCM"){
 			steps {
-				 git branch: "$gitRepo", credentialsId: ["$gitCredId"] , url: "$gitBranch"
+				 git branch: '$gitBranch', credentialsId: ['$gitCredID'], url: '$gitRepo'
 			}
 		}	
 					
