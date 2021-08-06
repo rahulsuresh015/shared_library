@@ -46,7 +46,7 @@ environment {
 			steps {
 				script { 
 					 docker.withRegistry( '', registryCredential ) { 
-						 dockerImage.run(-itd --name jenkinscontainer) 
+						 dockerImage.run(-itd --name containerName + ":" + dockerTag) 
 					}
 				} 
 			}
