@@ -40,7 +40,7 @@ environment {
 					
 		stage('DEPLOY IMAGE') {
 			steps {
-				sh 'kubectl set image deployment/angular-webapp webapp="$registry:$dockerTag" --record'
+				sh 'kubectl set image deployment/webapp-deployment nodejs="$registry:$dockerTag" --record'
 			}
 		}
 	}
