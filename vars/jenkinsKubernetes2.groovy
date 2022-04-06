@@ -24,7 +24,7 @@ environment {
        agent{label 'docker'}
 			 steps { 
 				 script { 
-					 dockerImage = docker.build('"$registry:$dockerTag"') 
+					 dockerimage = docker.build('"$registry:$dockerTag"') 
 				 }
 			} 
 		}
@@ -34,7 +34,7 @@ environment {
 			 steps { 
 				 script { 
 					 docker.withRegistry( '', "$registryCredential" ) { 
-						 dockerImage.push() 
+						 dockerimage.push() 
 					}
 				}		
 			} 
