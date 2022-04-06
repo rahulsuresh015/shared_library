@@ -32,11 +32,11 @@ environment {
 		stage('PUSH HUB') { 
        agent{label 'docker'}
 			 steps { 
-				 script { 
-					 docker.withRegistry( '', "$registryCredential" ) { 
-						 dockerimage.push() 
-					}
-				}		
+				 script {
+					 docker.withRegistry( '', registryCredential ) { 
+			                        dockerImage.push() 
+                    			}
+                		}		
 			} 
 		}
 					
