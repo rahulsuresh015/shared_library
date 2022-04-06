@@ -10,7 +10,7 @@ environment {
 		gitCredId = "${gitcred}"
 	}
 		
-	agent { label 'k8s' }
+	agent { label 'kubernetes' }
 	
 	stages {
 		stage("POLL SCM"){
